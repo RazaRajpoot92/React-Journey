@@ -1,14 +1,5 @@
-/* 
-<div class="parent">
-    <div class="child1">
-        <h1>I'm child1 heading</h1>
-    </div>
-    <div class="child2">
-        <h1>I'm child2 heading</h1>
-    </div>
-</div>
-
-*/
+import React from "react"
+import ReactDOM from "react-dom/client"
 
 const heading = React.createElement(
     "div", { className: "parent" }
