@@ -1,0 +1,17 @@
+{
+  "name": "react-journey",
+  "version": "1.0.0",
+  "description": "The react learning journey",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "Ahmad Raza",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
