@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "The react learning journey",
   "scripts": {
+    "start":"parcel start.html",
+    "build":"parcel build start.html",
     "test": "jest"
   },
   "keywords": [

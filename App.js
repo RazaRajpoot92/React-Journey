@@ -1,13 +1,17 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 
-const heading = React.createElement(
-    "div", { className: "parent" }
-    , [React.createElement("div", { className: "child1" }, React.createElement("h1", {}, "I'm child1 heading"))
+const Title = ()=> <h1>React Component</h1>
 
-        , React.createElement("div", { className: "child2" }, React.createElement("h1", {}, "I'm child2 heading"))
-    ])
+const HeadingComponent = ()=>{
+    return(
+        <div>
+            <Title />
+            <h1>This is react component</h1>
+        </div>
+    )
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
-root.render(heading)
+root.render(<HeadingComponent />)
