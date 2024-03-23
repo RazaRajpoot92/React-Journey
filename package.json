@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "The react learning journey",
   "scripts": {
-    "start":"parcel start.html",
-    "build":"parcel build start.html",
+    "start": "parcel start.html",
+    "build": "parcel build start.html",
     "test": "jest"
   },
   "keywords": [
@@ -18,9 +18,10 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3"
   },
-  "browserslist":[
+  "browserslist": [
     "last 5 versions"
   ]
 }
