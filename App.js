@@ -1,17 +1,15 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
+import Card from "./src/components/Card"
 
-const Title = ()=> <h1>React Component</h1>
-
-const HeadingComponent = ()=>{
+const Body = ()=>{
     return(
         <div>
-            <Title />
-            <h1>This is react component</h1>
+            <Card />
         </div>
     )
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
-root.render(<HeadingComponent />)
+root.render(<Body />)
