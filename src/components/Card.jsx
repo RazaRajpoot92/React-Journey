@@ -1,6 +1,7 @@
 import "../../index.css"
 import {useEffect,useState} from "react"
 import Shimmer from "./Shimmer"
+import { Link } from "react-router-dom"
 
 const Card = ()=>{
     const [data, setData] = useState([])
@@ -44,14 +45,15 @@ const Card = ()=>{
         
         <div className="container">   
         {filteredData.map((restuarant, index)=>(
-
+<Link className="cardLink" to={"/restuarant/"+restuarant.info.id}>
+            
     <div key={index} className="cardbody">
         <img className='cardImage' src={`https://media-assets.swiggy.com/swiggy/image/upload/${restuarant.info.cloudinaryImageId}`} alt="" />
         <h3>{restuarant.info.name}</h3>
-        <p className="para">{restuarant.info.locality}</p>
-       
-    </div>
 
+        <p className="para">{restuarant.info.locality}</p>       
+    </div>
+    </Link>
         ))}
       </div> 
         </>

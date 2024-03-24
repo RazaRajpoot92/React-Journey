@@ -7,6 +7,7 @@ import About from "./src/components/About"
 import ErrorPage from "./src/components/Error"
 import Contact from "./src/components/Contact"
 import Navbar from "./src/components/Navbar"
+import Restaurant from "./src/components/Restaurant"
 
 
 const Body = ()=>{
@@ -36,6 +37,10 @@ const appRouter = createBrowserRouter([
             {
                 path:"contact",
                 element:<Contact />,
+            },
+            {
+                path:"restuarant/:id",
+                element:<Restaurant />
             }
         ]
     },
