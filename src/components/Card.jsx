@@ -26,23 +26,23 @@ const Card = ()=>{
 
     return(
         <>
-        <div className="sContainer">
+        
         <div className="searchContainer">
         
-        <input className="searchBar" 
-            value={searchText}
-            onChange={(e)=>setSearchText(e.target.value)} 
-            type="text"  />
-        <button className="btnSearch"
-            onClick={()=>{
+            <input className="searchBar" 
+                value={searchText}
+                onChange={(e)=>setSearchText(e.target.value)} 
+                type="text"  />
+            <button className="btnSearch"
+                onClick={()=>{
+            
+                    const filteredData = data.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()))
+                    setfilteredData(filteredData)
+                }}
+            >Search</button>
+        </div>
         
-                const filteredData = data.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()))
-                setfilteredData(filteredData)
-            }}
-        >Search</button>
-        </div>
-        </div>
-
+        <div className="container">   
         {filteredData.map((restuarant, index)=>(
 
     <div key={index} className="cardbody">
@@ -53,7 +53,7 @@ const Card = ()=>{
     </div>
 
         ))}
-      
+      </div> 
         </>
     )
 }
