@@ -1,8 +1,10 @@
-import "../../index.css"
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom"
 import useRestaurantData from "../utils/useRestaurantData"
+import RestaurantCard,{RatedCard} from "./RestuarantCard"
 
+
+const TopRatedCard = RatedCard(RestaurantCard)
 const Card = ()=>{
   const [data, setData, filteredData, 
     setfilteredData, searchText, 
@@ -14,12 +16,12 @@ const Card = ()=>{
     return(
         <>
         
-        <div className="searchContainer">        
-            <input className="searchBar" 
+        <div className="w-full h-12 bg-slate-200 flex justify-center items-center">        
+            <input className="border h-8 w-60 border-blue-400 rounded p-2  focus:border-blue-400 focus:outline-none m-1" 
                 value={searchText}
                 onChange={(e)=>setSearchText(e.target.value)} 
                 type="text"  />
-            <button className="btnSearch"
+            <button className="px-4 py-1 m-2 border-blue-400 bg-blue-300 rounded-md"
                 onClick={()=>{
             
                     const filteredData = data.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()))
@@ -28,26 +30,22 @@ const Card = ()=>{
             >Search</button>
         </div>
         
-        <div className="container">   
-    
-    {filteredData.map((restuarant, index)=>(
+    <div className="flex justify-center  p-4 gap-2 flex-wrap">   
+                {console.log(filteredData)}
+        {filteredData.map((restuarant, index)=>(
 
-    <Link key={restuarant.info.id} 
-    className="cardLink" 
-    to={"/restuarant/"+restuarant.info.id}>
-            
-        <div key={index} className="cardbody">
-            <img className='cardImage' src={`https://media-assets.swiggy.com/swiggy/image/upload/${restuarant.info.cloudinaryImageId}`} alt="" />
-            <h3>{restuarant.info.name}</h3>
-            <p className="para">{restuarant.info.locality}</p>       
-        </div>
-    
-    </Link>
-        ))}
-    
-      </div> 
+        <Link key={restuarant.info.id} 
+        className="cardLink" 
+        to={"/restuarant/"+restuarant.info.id}>
+                
+           {restuarant.info.avgRating>4?<TopRatedCard restuarant={restuarant} />:<RestaurantCard restuarant={restuarant} />} 
+        </Link>
+            ))}
+    </div> 
         </>
     )
 }
+
+
 
 export default Card;

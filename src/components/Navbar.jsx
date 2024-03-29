@@ -5,16 +5,16 @@ const Navbar = ()=>{
     const userStatus = useUserStatus()
     return(
         <>
-        <div className="navcontainer">
+        <div className="flex h-[10vh] p-4 items-center justify-around ">
             <div>
-                <h1 className="logo">Storify</h1>
+                <h1 className="text-3xl font-semibold">Storify</h1>
             </div>
-            <ul className="nav-items">
+            <ul className="flex text-lg gap-4">
                 <li className="link">Status {userStatus?"🟢":"🔴"}</li>
-                <li className="nav-item"><Link className="link" to={"/"} >Home</Link></li>
-                <li className="nav-item"><Link className="link" to={"/contact"} >Contact</Link></li>
-                <li className="nav-item"><Link className="link" to={"/about"} >About Us</Link></li>
-                <li className="nav-item"><button className="nav-btn">Login</button></li>
+                <li className=" hover:text-blue-600"><Link className="link" to={"/"} >Home</Link></li>
+                <li className=" hover:text-blue-600"><Link className="link" to={"/contact"} >Contact</Link></li>
+                <li className=" hover:text-blue-600"><Link className="link" to={"/about"} >About Us</Link></li>
+                <li className=" hover:text-blue-600"><button className="nav-btn">Login</button></li>
             </ul>
         </div>
         </>

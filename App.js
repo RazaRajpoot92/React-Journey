@@ -2,11 +2,11 @@ import React,{lazy,Suspense} from "react"
 import ReactDOM from "react-dom/client"
 import Card from "./src/components/Card"
 import { createBrowserRouter,Outlet, RouterProvider } from "react-router-dom"
-import "./index.css"
 import About from "./src/components/About"
 import ErrorPage from "./src/components/Error"
 import Navbar from "./src/components/Navbar"
 import Restaurant from "./src/components/Restaurant"
+import "./src/index.css"
 
 const Contact = lazy(()=> import("./src/components/Contact"))
 
