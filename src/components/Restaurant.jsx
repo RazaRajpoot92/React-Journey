@@ -21,8 +21,6 @@ const Restaurant = ()=>{
         totalRatingsString
     } = resturant
 
-
-    const newLocal = "";
     return (
         <>
         <div className="flex flex-col gap-3 mt-5 items-center">
