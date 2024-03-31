@@ -2,11 +2,14 @@ import { Link } from "react-router-dom";
 import useUserStatus from "../utils/useUserStatus";
 import UserContext from "../utils/UserContext";
 import { useContext } from "react";
+import { useSelector } from "react-redux";
 
 const Navbar = ()=>{
 
     const userStatus = useUserStatus()
     const {username} = useContext(UserContext)
+    const cartItems = useSelector((store) =>store.cart.items)
+    console.log(cartItems)
    
     return(
         <>
@@ -19,6 +22,7 @@ const Navbar = ()=>{
                 <li className=" hover:text-blue-600"><Link className="link" to={"/"} >Home</Link></li>
                 <li className=" hover:text-blue-600"><Link className="link" to={"/contact"} >Contact</Link></li>
                 <li className=" hover:text-blue-600"><Link className="link" to={"/about"} >About Us</Link></li>
+                <li className=" hover:text-blue-600"><Link className="font-bold" to={"/cart"} >Cart ( {cartItems.length} items)</Link></li>
                 <li className=" hover:text-blue-600"><Link to={"/login"} className="nav-btn">{username===""?"Login":username}</Link></li>
             </ul>
         </div>

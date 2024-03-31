@@ -3,7 +3,7 @@ import UserContext from "../utils/UserContext"
 
 
 const RestaurantCard = ({restuarant})=>{
-    const {username} = useContext(UserContext)
+    
     return(
         <div key={restuarant.info.id} className="w-52 gap-1 flex items-center flex-col p-2 h-[270px] border rounded-lg border-blue-200">
         <img className='w-full h-40 rounded-md' src={`https://media-assets.swiggy.com/swiggy/image/upload/${restuarant.info.cloudinaryImageId}`} alt="" />
