@@ -4,11 +4,15 @@ import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import useResData from "../utils/useResData";
 import { useState } from "react"
+import { addItem } from "../redux/cartSlice";
+import { UseDispatch, useDispatch } from "react-redux";
 
 const Restaurant = ()=>{
     const {id} = useParams()
     const resturant = useResData(id)
+    console.log(resturant)
     const [show, setShow] = useState(false)
+    const dispatch = useDispatch()
 
     if(resturant===null) return <Shimmer />
    
@@ -20,6 +24,10 @@ const Restaurant = ()=>{
         avgRatingString,
         totalRatingsString
     } = resturant
+
+    const handleClick = (item)=>{
+        dispatch(addItem(item))
+    }
 
     return (
         <>
@@ -40,7 +48,8 @@ const Restaurant = ()=>{
             
 <div className="flex gap-2  flex-row-reverse justify-around">
 
-<button className="p-2 h-10 w-56 border border-blue-200 bg-green-400 hover:bg-green-300 rounded-lg"
+<button onClick={()=>handleClick(resturant)}
+ className="p-2 h-10 w-56 border border-blue-200 bg-green-400 hover:bg-green-300 rounded-lg"
 >Add to Cart</button>
 
     <div className="w-[650px] p-2 rounded-lg  bg-slate-100 ">
